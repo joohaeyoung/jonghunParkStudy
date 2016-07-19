@@ -7,6 +7,7 @@ $vars = array(
 	'list'=> $list
 );
 
+//ㄴㅇㄹㅇ너리ㅏㅇ너ㅏ러니
 
 //ㅎㅎㅎㅎㅎ
 includeHeader();
