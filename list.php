@@ -7,6 +7,8 @@ $vars = array(
 	'list'=> $list
 );
 
+
+
 includeHeader();
 includeSkin("list.php", $vars );
 includeFooter();
