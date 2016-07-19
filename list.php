@@ -1,6 +1,6 @@
 <?php
 
-include "lib/dp.php";
+include "lib/db.php";
 
 include "lib/skin.php";
 
