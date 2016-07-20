@@ -5,27 +5,22 @@
 		<th>시간</th>
 	</tr>
 
-
-
-
 <?php foreach($vars['list'] as $list) { ?>
-	
 	<tr>
-	
-		<td><?=$list['title'] ?></td>
+		<td><a href="view.php?id=<?=$list['id']?>"><?=$list['title'] ?></a></td>
 		<td><?=$list['writer']?></td>
 		<td><?=$list['time']  ?></td>
-
 	</tr>
 <?php }?>
+
 </table>
+
 <a href="write.php" class="btn btn-warning">글쓰기</a>
 
 <?php
-
-/* 
+/*
 	<?= ?>
-	<?php echo ?>]
+	<?php echo ?>
 */
 ?>
 
