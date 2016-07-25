@@ -34,32 +34,36 @@
 
 <?php if(!isLogged() ){ ?>
 		<form class="form-horizontal">
-		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">id</label>
-			<div class="col-sm-10">
-			<input type="text" name="user_id" class="form-control" id="inputEmail3" placeholder="id">
+			<div class="form-group">
+				<label for="inputid" class="col-sm-2 control-label">id</label>
+				<div class="col-sm-10">
+					<input type="text" name="user_id" class="form-control" id="inputid" placeholder="id">
+				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<label for="inputPassword3" class="col-sm-2 control-label">pw</label>
-			<div class="col-sm-10">
-			<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+
+			<div class="form-group">
+				<label for="inputPassword3" class="col-sm-2 control-label">pw</label>
+				<div class="col-sm-10">
+					<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
-			<div class="checkbox">
-				<label>
-				<input type="checkbox"> Remember me
-				</label>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> Remember me
+						</label>
+					</div>
+				</div>
 			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">로그인</button>
+				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-10">
-			<button type="submit" class="btn btn-default">로그인</button>
-			</div>
-		</div>
+
 		</form>
 <?php }else{ ?>
 
