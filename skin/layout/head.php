@@ -31,7 +31,40 @@
 <!-- 내용 -->
 <div id="content">
 	<div id="sidebar">
-		<p>sidebar입니다</p>
+
+<?php if(!isLogged() ){ ?>
+		<form class="form-horizontal">
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label">id</label>
+			<div class="col-sm-10">
+			<input type="text" name="user_id" class="form-control" id="inputEmail3" placeholder="id">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPassword3" class="col-sm-2 control-label">pw</label>
+			<div class="col-sm-10">
+			<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+			<div class="checkbox">
+				<label>
+				<input type="checkbox"> Remember me
+				</label>
+			</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+			<button type="submit" class="btn btn-default">로그인</button>
+			</div>
+		</div>
+		</form>
+<?php }else{ ?>
+
+	<p><?=getUserInfo('name') ?>님 안녕하세요! 반가워용 </p>
+<?php }?>
 		<p>블라블라</p>
 		<p>블라블라</p>
 		<p>블라블라</p>
