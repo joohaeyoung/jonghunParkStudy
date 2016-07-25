@@ -2,18 +2,15 @@
 
 include "lib/include.php";
 
-$title = $_POST['title'];
-$writer = $_POST['writer'];
-$content = $_POST['content'];
+insert('post', array(
+    'title' => $_POST['title'],
+    'writer' => $_POST['writer'],
+    'content' => $_POST['content']
+));
 
-query(" INSERT INTO `post` ( `title`, `content`, `writer`) VALUES ( '$title', '$writer', '$content' )");
-
-//redirection("list.php");
 header('location: list.php');
 
 ?>
-
-
 
 <?php
 /*

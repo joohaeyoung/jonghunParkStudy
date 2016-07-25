@@ -4,7 +4,7 @@
 
 include "lib/include.php";
 
-$list = query("select * from post ORDER BY `id` DESC");
+$list = selectAllBySortedDesc('post','id');
 
 $vars = array(
 	'list'=> $list
