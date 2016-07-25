@@ -7,6 +7,7 @@
 
 <?php foreach($vars['list'] as $list) { ?>
 	<tr>
+		<!-- url로 넘어가는데 get으로 값을  넘긴다 -->
 		<td><a href="view.php?id=<?=$list['id']?>"><?=$list['title'] ?></a></td>
 		<td><?=$list['writer']?></td>
 		<td><?=$list['time']  ?></td>
@@ -23,5 +24,3 @@
 	<?php echo ?>
 */
 ?>
-
-
