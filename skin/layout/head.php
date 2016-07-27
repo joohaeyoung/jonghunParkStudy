@@ -33,7 +33,7 @@
 	<div id="sidebar">
 
 <?php if(!isLogged() ){ ?>
-		<form class="form-horizontal">
+		<form class="form-horizontal" action="login_ok.php" method="POST" >
 			<div class="form-group">
 				<label for="inputid" class="col-sm-2 control-label">id</label>
 				<div class="col-sm-10">
@@ -44,7 +44,7 @@
 			<div class="form-group">
 				<label for="inputPassword3" class="col-sm-2 control-label">pw</label>
 				<div class="col-sm-10">
-					<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+					<input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="user_pw">
 				</div>
 			</div>
 
@@ -67,7 +67,9 @@
 		</form>
 <?php }else{ ?>
 
-	<p><?=getUserInfo('name') ?>님 안녕하세요! 반가워용 </p>
+	<p><?=getLoggedUserInfo('user_name') ?>님 안녕하세요! 반가워용 </p>
+	<p><a class="btn btn-info" href="logout.php">로그아웃</a></p>
+	
 <?php }?>
 		<p>블라블라</p>
 		<p>블라블라</p>
