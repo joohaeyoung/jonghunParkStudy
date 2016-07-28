@@ -1,4 +1,4 @@
-<form action="write_ok.php" method="post">
+<form action="write_ok.php" method="post" enctype="multipart/form-data">
 
     <div class="form-group">
         <label>제목</label>
@@ -16,8 +16,13 @@
     </div>
 
     <div class="form-group">
+        <input class="form-control" type="file" name="file_upload"  />
+    </div>
+    <div class="form-group">
         <input class="btn btn-primary" type="submit" value="저장" />
     </div>
+
+
 
 </form>
 

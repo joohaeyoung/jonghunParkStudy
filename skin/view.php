@@ -6,4 +6,5 @@
 <?=$vars['post']['content'] ?>
 </div>
 
+<a href="upload_file/<?= $vars['file']['file_name'] ?>"><?= $vars['file']['file_name'] ?></a>
 <!-- 컨트롤러는 모델와 뷰사이의 다리역할...-->
