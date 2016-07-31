@@ -2,7 +2,7 @@
 
 function getConn() {
     static $conn = null;
-
+    
     $dsn = 'mysql:dbname=test;host=localhost;charset=utf8';
     $user = 'root';
     $password = '1234';
@@ -10,6 +10,9 @@ function getConn() {
     if($conn == null)
         $conn = new PDO($dsn, $user, $password);
 
+     $conn->exec("set names utf8");
+
+    
     return $conn;
 }
 
@@ -18,15 +21,27 @@ function query($str) {
 }
 
 function selectAll($table) {
-    return query('select * from '.$table);
+    $str = sprintf('select * from %s', $table);
+    
+    return query($str);
 }
 
 function selectAllBySortedDesc($table, $field) {
-    return query('select * from '.$table.' ORDER BY '.$field.' DESC');
+    $str = sprintf('select * from %s ORDER BY %s DESC', $table, $field);
+    
+    return query($str);
 }
 
 function selectById($table, $id) {
-    return query('select * from '.$table.' WHERE id = '.$id);
+    $str = sprintf('select * from %s WHERE id = %s', $table, $id);
+    
+    return query($str);
+}
+
+function selectUserByUserId($user_id){
+
+    $str = sprintf("select * from user WHERE user_id='%s'" ,$user_id);
+    return query($str)->fetch();
 }
 
 /*
@@ -37,17 +52,23 @@ function selectById($table, $id) {
     );
 */
 function insert($table, $row) {
+    /*
     $keys = '';
     $values = '';
     $i = 0;
-
+    
     foreach($row as $key => $value) {
         $isFinish = (count($row) == ++$i);
-
+        
         $keys .= $key.(!$isFinish ? ', ' : '');
         $values .= '"'.$value.'"'.(!$isFinish ? ', ' : '');
     }
-
-    return query('INSERT INTO '.$table.' ('.$keys.') VALUES ('.$values.')');
+    */
+    
+    $keys = implode(',', array_keys($row));
+    $values = implode('","', $row);
+    
+    $str = sprintf('INSERT INTO %s (%s) VALUES ("%s")', $table, $keys, $values);
+    
+    return query($str);
 }
-
